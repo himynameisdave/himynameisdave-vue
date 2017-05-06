@@ -12,9 +12,9 @@ export default {
 
 <style scoped>
 .name {
-    font-size: 3.75rem;
+    font-size: 3.25rem;
     font-weight: 300;
-    margin: 0 0 30px;
+    margin: 0 0 10px;
     letter-spacing: -0.07rem;
     text-transform: lowercase;
 }

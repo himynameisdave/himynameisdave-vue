@@ -3,6 +3,7 @@
         <Face />
         <Name />
         <Blurb />
+        <Profiles />
     </main>
 </template>
 
@@ -10,6 +11,7 @@
 import Face from './components/Face';
 import Name from './components/Name';
 import Blurb from './components/Blurb';
+import Profiles from './components/Profiles';
 
 export default {
     name: 'app',
@@ -17,11 +19,12 @@ export default {
         Face,
         Name,
         Blurb,
+        Profiles,
     },
 };
 </script>
 
-<style>
+<style lang="less">
 * { box-sizing: border-box;}
 html, body {
     display: block;

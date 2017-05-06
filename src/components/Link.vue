@@ -6,7 +6,10 @@
 <script>
 export default {
     name: 'Link',
-    props: ['url', 'text'],
+    props: {
+        url: String,
+        text: String,
+    },
 };
 </script>
 
