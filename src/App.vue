@@ -2,23 +2,27 @@
     <main id="app">
         <Face />
         <Name />
+        <Blurb />
     </main>
 </template>
 
 <script>
 import Face from './components/Face';
 import Name from './components/Name';
+import Blurb from './components/Blurb';
 
 export default {
     name: 'app',
     components: {
         Face,
         Name,
+        Blurb,
     },
 };
 </script>
 
 <style>
+* { box-sizing: border-box;}
 html, body {
     display: block;
     margin: 0;
