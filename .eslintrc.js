@@ -24,6 +24,8 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+    "comma-dangle": [0],
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
