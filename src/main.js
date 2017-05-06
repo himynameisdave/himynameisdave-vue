@@ -3,6 +3,9 @@
 import Vue from 'vue';
 import App from './App';
 
+const files = require.context('!svg-sprite-loader!./assets/icons', false, /.*\.svg$/);
+files.keys().forEach(files);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
