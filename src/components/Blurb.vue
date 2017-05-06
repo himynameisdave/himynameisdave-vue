@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .blurb {
-    margin: 0 0 30px;
+    margin: 0 0 40px;
     max-width: 475px;
     width: 98%;
 }
