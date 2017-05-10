@@ -10,15 +10,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less">
 .face {
     border: 10px solid #002f47;
     border-radius: 100%;
     box-shadow: 0 -2px 4px 1px rgba(0, 0, 0, 0.25);
-    height: 230px;
-    margin: 0 0 10px;
+    display: block;
+    height: 190px;
+    margin: 0 auto 10px;
     overflow: hidden;
-    width: 230px;
+    width: 190px;
+    @media all and (min-height: 376px) {
+        height: 230px;
+        width: 230px;
+    }
+
 }
 .face img {
     max-width: 100%;

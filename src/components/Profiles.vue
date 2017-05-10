@@ -54,22 +54,34 @@ export default {
 .profiles {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-flow: row wrap;
     padding: 0;
     margin: 0;
     list-style: none;
     margin: 0 auto;
     max-width: 475px;
-    width: 98%;
+    width: 80%;
+    @media all and (min-width: 460px) {
+        width: 98%;
+    }
 }
 .profile {
-    height: 50px;
-    width: 50px;
+    // height: 50px;
+    width: 26%;
+    margin-bottom: 1.5rem;
+    @media all and (min-width: 460px) {
+        height: 50px;
+        width: 50px;
+    }
     &-icon {
         height: 100%;
         width: 100%;
     }
     &-link {
+        height: 50px;
+        width: 50px;
+
         &:hover {
             .icon {
                 fill: #0F76AC;

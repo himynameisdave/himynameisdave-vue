@@ -40,11 +40,14 @@ html, body {
     background-color: #E9EFF2;
     color: #465F6E;
     align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding-top: 80px;
+    display: block;
+    text-align: center;
+    padding: 30px 0 20px;
     height: 100%;
     width: 100%;
+    overflow: scroll;
+    @media all and (min-height: 376px) {
+        padding: 80px 0 20px;
+    }
 }
 </style>
