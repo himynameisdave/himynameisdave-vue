@@ -1,0 +1,162 @@
+<template>
+    <div class="last-song">
+        <div
+            v-if="this.isLoading"
+            class="last-song__loading"
+        >
+            Loading Dave's last played song....
+        </div>
+        <h5
+            class="last-song__heading"
+            v-if="this.lastFmData.nowplaying"
+        >
+            &#127911; Currently listening to
+        </h5>
+        <h5
+          class="last-song__heading"
+          v-if="!this.lastFmData.nowplaying"
+        >
+            My last played song
+        </h5>
+        <div
+            v-if="!this.isLoading"
+            class="last-song__details"
+        >
+            <div class="last-song__details--l">
+                <img :src="this.lastFmData.image" :alt="this.lastFmData.album" class="last-song__details-image" />
+            </div>
+            <div class="last-song__details--l">
+                <div class="last-song__details-track">
+                    {{ this.lastFmData.name }}
+                </div>
+                <div class="last-song__details-artist">
+                    {{ this.lastFmData.artist }}
+                </div>
+                <div class="last-song__details-album">
+                    {{ this.lastFmData.album }}
+                </div>
+                <hr class="last-song__details-row" />
+                <div class="last-song__details-link">
+                    <Link url="https://www.last.fm/user/himynameisdave9" text="cash me on last.fm" target="_blank" />
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import truncate from 'truncate';
+import Link from '../Link';
+require('isomorphic-fetch');
+
+const TRUNCATION_LEVEL = 40;
+export default {
+    name: 'LastSong',
+    components: {
+        Link
+    },
+    data() {
+        return {
+            isLoading: true,
+            lastFmData: null,
+        };
+    },
+    beforeMount() {
+        fetch('http://hook.io/himynameisdave/last-played-song')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return {};
+            })
+            .then(data => {
+                this.isLoading = false;
+                this.lastFmData = {
+                    ...data,
+                    name: truncate(data.name, TRUNCATION_LEVEL),
+                    artist: truncate(data.artist, TRUNCATION_LEVEL),
+                    album: truncate(data.album, TRUNCATION_LEVEL),
+                };
+
+
+                console.log('daaaata', data);
+            })
+            .catch(e => {
+                throw new Error(e);
+            });
+    }
+};
+</script>
+
+<style lang="less" scoped>
+.last-song {
+
+}
+
+.last-song__loading {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.last-song__heading {
+    margin: 0 0 12px;
+    font-weight: 300;
+    font-size: 1.25rem;
+    text-transform: lowercase;
+}
+
+.last-song__details {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+
+    &--l {
+        &:first-child {
+            width: 30%;
+        }
+        &:last-child {
+            padding-left: 6px;
+            width: 70%;
+        }
+    }
+
+    &-image {
+        max-width: 100%;
+    }
+
+    &-row {
+        border: 0;
+        border-bottom: 1px solid fade(#000, 10%);
+        margin: 10px 0 5px;
+        width: 61.8%;
+    }
+
+    &-track {
+        font-size: 1.175rem;
+        font-weight: 300;
+        margin-bottom: 3px;
+        // text-transform: lowercase;
+    }
+
+    &-artist {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    &-album {
+        font-weight: 700;
+        font-size: 0.725rem;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+    }
+
+    &-link {
+        font-weight: 700;
+        font-size: 0.725rem;
+        a {
+            cursor: pointer;
+        }
+    }
+}
+</style>

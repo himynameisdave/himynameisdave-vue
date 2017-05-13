@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="link">{{ text }}</a>
+    <a :href="url" class="link" :target="target">{{ text }}</a>
 </template>
 
 
@@ -9,6 +9,7 @@ export default {
     props: {
         url: String,
         text: String,
+        target: String,
     },
 };
 </script>
