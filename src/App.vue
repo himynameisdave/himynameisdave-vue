@@ -3,6 +3,7 @@
         <Face />
         <Name />
         <Blurb />
+        <Socials />
         <Profiles />
     </main>
 </template>
@@ -11,6 +12,7 @@
 import Face from './components/Face';
 import Name from './components/Name';
 import Blurb from './components/Blurb';
+import Socials from './components/Socials/Socials';
 import Profiles from './components/Profiles';
 
 export default {
@@ -19,6 +21,7 @@ export default {
         Face,
         Name,
         Blurb,
+        Socials,
         Profiles,
     },
 };
@@ -32,12 +35,18 @@ html, body {
     padding: 0;
     height: 100%;
 }
+body {
+    background-image: url('./assets/bg-large.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+}
 #app {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    background-color: #E9EFF2;
+    background-color: fade(#E9EFF2, 80%);
     color: #465F6E;
     align-items: center;
     display: block;

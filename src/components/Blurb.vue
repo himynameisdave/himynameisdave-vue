@@ -4,7 +4,7 @@
            &#128075; Hi, my name is Dave. I am a developer based in Vancouver, Canada. I love making me some internets.
         </p>
         <p class="blurb__text">
-            Currently soaring over at <Link url="https://7geese.com/" text="7Geese" />	&#128640;
+            Currently soaring over at <Link url="https://7geese.com/" text="7Geese" />  &#128640;
         </p>
     </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     width: 98%;
 }
 .blurb__text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0;
     margin: 0 0 5px
 }
