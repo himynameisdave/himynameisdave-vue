@@ -32,10 +32,6 @@ export default {
                 url: 'https://www.linkedin.com/in/davelunny/',
                 target: '_blank',
             }, {
-                name: 'lastfm',
-                url: 'https://www.last.fm/user/himynameisdave9',
-                target: '_blank',
-            }, {
                 name: 'medium',
                 url: 'https://medium.com/@dave_lunny',
                 target: '_blank',
@@ -44,6 +40,11 @@ export default {
                 url: 'mailto:d@velunny.com',
                 target: '_self',
             },
+            // {
+            //     name: 'lastfm',
+            //     url: 'https://www.last.fm/user/himynameisdave9',
+            //     target: '_blank',
+            // },
         ]
     })
 };
