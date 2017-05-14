@@ -55,7 +55,7 @@ export default {
 .profiles {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-flow: row wrap;
     padding: 0;
     margin: 0;
@@ -71,6 +71,11 @@ export default {
     // height: 50px;
     width: 26%;
     margin-bottom: 1.5rem;
+    transition: transform 0.35s ease-in-out;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1.15);
+    }
     @media all and (min-width: 460px) {
         height: 50px;
         width: 50px;
