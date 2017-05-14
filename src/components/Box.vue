@@ -19,7 +19,10 @@ export default {
     margin: 0 auto;
     text-align: left;
     width: 100%;
-    
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.45s ease-in-out;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1.025);
+    }
 }
 </style>

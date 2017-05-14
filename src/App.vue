@@ -54,7 +54,6 @@ body {
     padding: 30px 0 20px;
     height: 100%;
     width: 100%;
-    overflow: scroll;
     @media all and (min-height: 376px) {
         padding: 80px 0 20px;
     }

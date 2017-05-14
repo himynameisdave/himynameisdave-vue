@@ -6,17 +6,14 @@
         >
             Loading Dave's last played song....
         </div>
-        <h5
-            class="last-song__heading"
-            v-if="this.lastFmData.nowplaying"
-        >
-            &#127911; Currently listening to
-        </h5>
-        <h5
-          class="last-song__heading"
-          v-if="!this.lastFmData.nowplaying"
-        >
-            My last played song
+        <h5 class="last-song__heading" v-if="!this.isLoading">
+            &#127911;
+            <span v-if="this.lastFmData.nowplaying">
+                Currently listening to
+            </span>
+            <span v-if="!this.lastFmData.nowplaying">
+                Last played song
+            </span>
         </h5>
         <div
             v-if="!this.isLoading"
@@ -37,7 +34,7 @@
                 </div>
                 <hr class="last-song__details-row" />
                 <div class="last-song__details-link">
-                    <Link url="https://www.last.fm/user/himynameisdave9" text="cash me on last.fm" target="_blank" />
+                    <Link url="https://www.last.fm/user/himynameisdave9" text="See more on Last.fm..." target="_blank" />
                 </div>
             </div>
         </div>
@@ -77,9 +74,6 @@ export default {
                     artist: truncate(data.artist, TRUNCATION_LEVEL),
                     album: truncate(data.album, TRUNCATION_LEVEL),
                 };
-
-
-                console.log('daaaata', data);
             })
             .catch(e => {
                 throw new Error(e);
@@ -96,26 +90,29 @@ export default {
 .last-song__loading {
     font-style: italic;
     font-weight: 300;
+    padding: 30px 0;
 }
 
 .last-song__heading {
-    margin: 0 0 12px;
     font-weight: 300;
     font-size: 1.25rem;
+    margin: 0 0 18px;
     text-transform: lowercase;
 }
 
 .last-song__details {
-    font-size: 0.9rem;
+    line-height: 1.6181;
+    align-items: center;
     display: flex;
+    font-size: 0.9rem;
     flex-direction: row;
 
     &--l {
         &:first-child {
-            width: 30%;
+            width: 125px;
         }
         &:last-child {
-            padding-left: 6px;
+            padding-left: 12px;
             width: 70%;
         }
     }
@@ -127,7 +124,7 @@ export default {
     &-row {
         border: 0;
         border-bottom: 1px solid fade(#000, 10%);
-        margin: 10px 0 5px;
+        margin: 12px 0 10px;
         width: 61.8%;
     }
 
@@ -135,7 +132,6 @@ export default {
         font-size: 1.175rem;
         font-weight: 300;
         margin-bottom: 3px;
-        // text-transform: lowercase;
     }
 
     &-artist {
@@ -152,8 +148,7 @@ export default {
     }
 
     &-link {
-        font-weight: 700;
-        font-size: 0.725rem;
+        font-size: 0.8rem;
         a {
             cursor: pointer;
         }

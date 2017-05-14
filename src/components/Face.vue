@@ -20,11 +20,15 @@ export default {
     margin: 0 auto 10px;
     overflow: hidden;
     width: 190px;
+    transition: transform 0.425s ease-in-out;
+    transform: rotate(0) scale(1);
+    &:hover {
+        transform: rotate(-7deg) scale(1.04);
+    }
     @media all and (min-height: 376px) {
         height: 230px;
         width: 230px;
     }
-
 }
 .face img {
     max-width: 100%;
