@@ -95,7 +95,7 @@ export default {
 
 .last-song__heading {
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin: 0 0 18px;
     text-transform: lowercase;
 }
@@ -118,6 +118,7 @@ export default {
     }
 
     &-image {
+        border: 1px solid rgba(0, 0, 0, 0.1);
         max-width: 100%;
     }
 

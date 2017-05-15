@@ -53,7 +53,6 @@ export default {
             .then(data => {
                 this.isLoading = false;
                 this.tweetData = data;
-                console.log('this.tweetData', this.tweetData);
             })
             .catch(e => {
                 throw new Error(e);
@@ -75,7 +74,7 @@ export default {
 
 .last-tweet__heading {
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin: 0 0 18px;
     text-transform: lowercase;
 }
@@ -84,7 +83,7 @@ export default {
     &-text {
         font-size: 1rem;
         font-weight: 300;
-        padding: 0 16px;
+        padding: 0 18px 0 16px;
         position: relative;
         &:before,
         &:after {
@@ -102,8 +101,8 @@ export default {
         }
         &:after {
             content: '”';
-            bottom: -5%;
-            right: 1%;
+            bottom: -50%;
+            right: -2%;
         }
     }
     &-row {

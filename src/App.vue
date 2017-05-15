@@ -1,5 +1,6 @@
 <template>
     <main id="app">
+        <BackgroundImage />
         <Face />
         <Name />
         <Blurb />
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import BackgroundImage from './components/Background';
 import Face from './components/Face';
 import Name from './components/Name';
 import Blurb from './components/Blurb';
@@ -18,6 +20,7 @@ import Profiles from './components/Profiles';
 export default {
     name: 'app',
     components: {
+        BackgroundImage,
         Face,
         Name,
         Blurb,
@@ -35,18 +38,11 @@ html, body {
     padding: 0;
     height: 100%;
 }
-body {
-    background-image: url('./assets/bg-large.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 35%;
-}
 #app {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    background-color: fade(#E9EFF2, 80%);
     color: #465F6E;
     align-items: center;
     display: block;
