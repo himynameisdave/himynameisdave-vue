@@ -1,3 +1,6 @@
 {
-    "extends": "himynameisdave/configurations/browser"
+    "extends": "himynameisdave/configurations/browser",
+    "env": {
+        "node": true
+    }
 }
